@@ -80,7 +80,13 @@ class RestaurantsController < ApplicationController
       end
     end
   end
-
+  
+  #해시태그
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @restaurants = tag.restaurants
+  end
+  
  
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -90,7 +96,7 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:res_name,:branch_name,:detail_addr,:food_type,:open_hour,
+      params.require(:restaurant).permit(:res_name,:branch_name,:detail_addr,:contents,:food_type,:open_hour,
                                          :close_hour,:min_price,:max_price,:phone,:b_number,:image_path)
     end
 end

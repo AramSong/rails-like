@@ -1,5 +1,3 @@
-console.log("찾음");
-
  $('.recomm-restaurant').html(`
   <% @restaurants.each do |restaurant| %>
    <div class="card col-md-3">
@@ -9,7 +7,6 @@ console.log("찾음");
     <p class="card-text"><%= restaurant.food_type%></p>
     <p class="card-text"><%= restaurant.detail_addr%></p>
     <p class="card-text"><%= restaurant.phone%></p>
-    
     <%= link_to '식당 정보보기', restaurant_path(restaurant), class: 'btn btn-primary' %>
   </div>
 </div>

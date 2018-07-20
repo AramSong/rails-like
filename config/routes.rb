@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'likes/:review_id' => 'reviews#like_review'
   #스크랩
   post 'restaurants/:restaurant_id/scrab' => 'scrabs#scrab_toggle' ,as: 'new_scrab'
+  #해시태그
+  get '/restaurants/hashtags/:name' => 'restaurants#hashtags' ,as: 'hashtag'
   
   resources :restaurants do
     member do
